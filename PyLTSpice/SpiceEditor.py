@@ -942,7 +942,7 @@ class SpiceEditor(SpiceCircuit):
         """
         self.netlist = []
         if os.path.exists(self.netlist_file):
-            with open(self.netlist_file, 'r', encoding=self.encoding, errors='replace') as f:
+            with open(self.netlist_file, 'r') as f:
                 lines = iter(f)  # Creates an iterator object to consume the file
                 finished = self._add_lines(lines)
                 if not finished:
